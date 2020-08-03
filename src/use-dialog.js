@@ -2,6 +2,7 @@ import React, {useRef, useEffect} from 'react';
 
 export function useDialog({
   state: [open, setOpen],
+  modal = true,
   onCancel = null,
   onClose = null
 }) {
@@ -17,7 +18,11 @@ export function useDialog({
 
     const dialog = ref.current;
     if (open && !dialog.open) {
-      dialog.showModal();
+      if (modal) {
+        dialog.showModal();
+      } else {
+        dialog.show();
+      }
     }
 
     if (!open && dialog.open) {
@@ -63,11 +68,12 @@ export function useDialog({
   };
 }
 
-export const Dialog = ({state, onClose, onCancel, ...otherProps}) => {
+export const Dialog = ({state, modal, onClose, onCancel, ...otherProps}) => {
   const {dialogProps} = useDialog({
+    state,
+    modal,
     onClose,
-    onCancel,
-    state
+    onCancel
   });
 
   return <dialog {...dialogProps} {...otherProps} />;
