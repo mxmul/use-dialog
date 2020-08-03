@@ -46,8 +46,6 @@ export default function App() {
 |-----------|-------------|
 | state | A boolean state variable and setter pair, as returned by `useState()`. This represents the open / closed state of the modal. |
 | modal | Optional. Should the dialog be a modal? (default: true) |
-| onClose | Optional. Fires when the modal is closed. |
-| onCancel |  Optional. Fires when the modal is cancelled. |
 
 All unknown props are passed along to the underlying `<dialog>` element.
 

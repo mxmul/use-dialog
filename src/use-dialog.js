@@ -1,11 +1,6 @@
 import React, {useRef, useEffect} from 'react';
 
-export function useDialog({
-  state: [open, setOpen],
-  modal = true,
-  onCancel = null,
-  onClose = null
-}) {
+export function useDialog({state: [open, setOpen], modal = true}) {
   const ref = useRef(null);
 
   /**
@@ -42,38 +37,25 @@ export function useDialog({
 
     const dialog = ref.current;
 
-    const handleClose = (evt) => {
+    const hide = () => {
       setOpen(false);
-      if (onClose) {
-        onClose(evt);
-      }
     };
 
-    const handleCancel = (evt) => {
-      if (onCancel) {
-        onCancel(evt);
-      }
-    };
-
-    dialog.addEventListener('cancel', handleCancel);
-    dialog.addEventListener('close', handleClose);
+    dialog.addEventListener('close', hide);
     return () => {
-      dialog.removeEventListener('cancel', handleCancel);
-      dialog.removeEventListener('close', handleClose);
+      dialog.removeEventListener('close', hide);
     };
-  }, [ref, onCancel, onClose, setOpen]);
+  }, [ref, setOpen]);
 
   return {
     dialogProps: {ref}
   };
 }
 
-export const Dialog = ({state, modal, onClose, onCancel, ...otherProps}) => {
+export const Dialog = ({state, modal, ...otherProps}) => {
   const {dialogProps} = useDialog({
     state,
-    modal,
-    onClose,
-    onCancel
+    modal
   });
 
   return <dialog {...dialogProps} {...otherProps} />;
