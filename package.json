@@ -37,6 +37,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "microbundle": "^0.12.3",
+    "npm-run-all": "^4.1.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "xo": "^0.32.1"
@@ -51,8 +52,5 @@
   },
   "lint-staged": {
     "*": "npm run lint-fix"
-  },
-  "dependencies": {
-    "npm-run-all": "^4.1.5"
   }
 }
