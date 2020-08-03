@@ -20,17 +20,17 @@ import { Dialog } from "use-dialog";
 export default function App() {
   const [open, setOpen] = useState(false);
 
-  const open = () => setOpen(true);
-  const close = () => setOpen(false);
+  const show = () => setOpen(true);
+  const hide = () => setOpen(false);
 
   return (
     <>
       <Dialog state={[open, setOpen]}>
         <p>Hello, world!</p>
-        <button onClick={close}>Hide</button>
+        <button onClick={hide}>Hide</button>
       </Dialog>
 
-      <button onClick={open}>Show</button>
+      <button onClick={show}>Show</button>
     </>
   );
 }
