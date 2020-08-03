@@ -58,7 +58,7 @@ Accepts an object with the same props as above. Returns props to be spread into 
 E.g:
 
 ```jsx
-const dialogProps = useDialog({ state: [open, setOpen] });
+const {dialogProps} = useDialog({ state: [open, setOpen] });
 <dialog {...dialogProps}>Sup!</dialog>
 ```
 
