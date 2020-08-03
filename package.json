@@ -26,7 +26,7 @@
     "lint": "xo --space --prettier",
     "lint-fix": "npm run lint -- --fix",
     "test": "run-s lint-fix test-only",
-    "test-only": "ava",
+    "test-only": "echo TODO: write some tests!",
     "prepublish": "npm run build"
   },
   "devDependencies": {
