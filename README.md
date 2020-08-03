@@ -1,7 +1,7 @@
 
 # use-dialog
 
-[![npm](https://img.shields.io/npm/v/use-dialog.svg)](https://www.npmjs.com/package/use-dialog) ![MIT license](https://badgen.now.sh/badge/license/MIT)
+[![npm](https://img.shields.io/npm/v/use-dialog.svg)](https://www.npmjs.com/package/use-dialog) [![bundlephobia](https://badgen.net/bundlephobia/minzip/use-dialog)](https://bundlephobia.com/result?p=use-dialog) ![MIT license](https://badgen.now.sh/badge/license/MIT)
 
 A tiny library for using native `<dialog>` elements in React.
 
