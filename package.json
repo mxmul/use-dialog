@@ -1,6 +1,6 @@
 {
   "name": "use-dialog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": " A tiny library for using native <dialog> elements in React.",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     }
   },
   "scripts": {
-    "build": "microbundle --format es,cjs",
+    "build": "microbundle --jsx React.createElement --format es,cjs",
     "lint": "xo --space --prettier",
     "lint-fix": "npm run lint -- --fix",
     "test": "run-s lint-fix test-only",
