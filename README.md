@@ -5,6 +5,12 @@
 
 A tiny library for using native `<dialog>` elements in React.
 
+## Why?
+
+- The `<dialog>` element is great! It's accessible by default, and allows you to keep your bundles small.
+- `<dialog>` can be easily [polyfilled](#polyfill) for older browsers.
+- `<dialog>` elements are shown / hidden with an imperative API that is a little awkward in React. This library allows you to use them without messing around with refs.
+
 ## Installation
 
 ```
